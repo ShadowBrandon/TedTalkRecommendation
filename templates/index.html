@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ted Talk Recommender</title>
+  </head>
+  <body>
+    <center>
+    <img style="height:100px;" src="https://www.logolynx.com/images/logolynx/8c/8c32adbb907d8caf43bf5e16376eaceb.jpeg">
+
+    <h1> Welcome to the Ted Talk Recommender</h1>
+
+    <h2> Please Enter Title or ID</h2>
+  
+    <form action="/ted" method="post">
+
+      <input style="height:25px;font-size:14pt;" type="text" name="TedTalkTitle"></input>
+      <!-- Variable entry called TedTalkTitle -->
+      <button style="height:20px;font-size:8pt;"id="button" onclick="getRecs()">Submit</button>
+    </form>
+    
+  
+  <h1><div id="yours"> </div></h1>
+    {% if message %}
+      <hr>
+        <h2><u> Original </u></h2>
+        <b>Title:</b>
+        <u>{{message[0][1]}}</u>
+        <br>
+        <b>Show ID:</b>
+        {{message[0][0]}}
+        <br>
+        <iframe width="420" height="345" src={{message[0][4][0:-1]}}>
+        </iframe>
+        <br>
+        <b>URL:</b>
+        {{message[0][4][0:-1]}}
+        <br>
+        <b>Tags:</b>
+        {{message[0][2]}}
+        <br>
+        <b>Topic:</b>
+        {{message[0][3]}}
+        <br>
+        <br>
+        <br>
+      <hr>
+        <h2><u> Recommendation #1 </u></h2>
+        <b>Title:</b>
+        <u>{{message[1][1]}}</u>
+        <br>
+        <b>Show ID:</b>
+        {{message[1][0]}}
+        <br>
+        <iframe width="420" height="345" src={{message[1][4][0:-1]}}>
+        </iframe>
+        <br>
+        <b>URL:</b>
+        {{message[1][4][0:-1]}}
+        <br>
+        <b>Tags:</b>
+        {{message[1][2]}}
+        <br>
+        <b>Topic:</b>
+        {{message[1][3]}}
+        <br>
+        <br>
+        <br>
+        <h2><u> Recommendation #2 </u></h2>
+        <b>Title:</b>
+        <u>{{message[2][1]}}</u>
+        <br>
+        <b>Show ID:</b>
+        {{message[2][0]}}
+        <br>
+        <iframe width="420" height="345" src={{message[2][4][0:-1]}}>
+        </iframe>
+        <br>
+        <b>URL:</b>
+        {{message[2][4][0:-1]}}
+        <br>
+        <b>Tags:</b>
+        {{message[2][2]}}
+        <br>
+        <b>Topic:</b>
+        {{message[2][3]}}
+        <br>
+        <br>
+        <br>
+        <h2><u> Recommendation #3 </u></h2>
+        <b>Title:</b>
+        <u>{{message[3][1]}}</u>
+        <br>
+        <b>Show ID:</b>
+        {{message[3][0]}}
+        <br>
+        <iframe width="420" height="345" src={{message[3][4][0:-1]}}>
+        </iframe>
+        <br>
+        <b>URL:</b>
+        {{message[3][4][0:-1]}}
+        <br>
+        <b>Tags:</b>
+        {{message[3][2]}}
+        <br>
+        <b>Topic:</b>
+        {{message[3][3]}}
+        <br>
+        <br>
+        <br>
+
+    {% endif %}
+  </div></h2>
+  </center>
+  </body>
+</html>
